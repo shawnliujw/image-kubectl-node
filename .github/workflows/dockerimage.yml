@@ -11,3 +11,10 @@ jobs:
         name: shawnliu/kubectl-node
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
+    - name: Publish to Aliyun Registry
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: shawn_repo/kubectl-node
+          username: ${{ secrets.ALI_DOCKER_USERNAME }}
+          password: ${{ secrets.ALI_DOCKER_PASSWORD }}
+          registry: ${{ secrets.ALI_DOCKER_REGISTRY }}
